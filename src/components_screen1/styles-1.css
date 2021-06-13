@@ -1,0 +1,80 @@
+.body {
+  margin: 0;
+}
+
+/*    ------------------>   screen 1   <------------------------------*/
+.main-display {
+  text-align: center;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+/* Left Display*/
+
+.leftDisplay {
+  background-color: #f5d8ff;
+  padding: 5% 0 5% 0;
+  font-family: "Mirza", cursive;
+}
+.rightDisplay {
+  background-color: blue;
+}
+
+.kingQueen {
+  height: 40%;
+  width: 50%;
+  border-radius: 10%;
+}
+
+.MainLine1 {
+  margin-top: 10%;
+  font-weight: 600;
+  font-size: 3.5rem;
+}
+.MainLine2 {
+  margin-top: 20%;
+  font-weight: 400;
+  font-size: 2.7rem;
+}
+
+/*Right Display*/
+
+.rightDisplay {
+  font-family: "Pangolin", cursive;
+  background-color: white;
+  padding: 0 4%;
+}
+
+.card {
+  margin-top: 20%;
+  padding: 6% 0;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.kingImg {
+  height: 10%;
+  width: 20%;
+  margin-top: 5%;
+}
+
+.icon {
+  margin-right: 10px;
+}
+.butText {
+  display: inline-block;
+  margin: 0px;
+}
+
+.nameInput {
+  background-color: #e2b8f0;
+  padding: 3%;
+  width: 80%;
+  font-size: 2rem;
+  border-radius: 20px;
+  border: 0px;
+}
+
+/* ------------------->    Screen 3 ----------------------------- */

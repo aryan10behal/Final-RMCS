@@ -1,0 +1,64 @@
+/*   nav bar formatting       */
+
+body {
+    background-color: #ffffff;
+    font-family: "Pangolin", cursive;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .container-formatting {
+    background-color: #e2b8f0;
+  }
+  
+  @media screen and (min-width: 921px) {
+    b.top-bar-format {
+      margin-left: 1%;
+      font-size: 40px;
+    }
+    a.top-bar-format {
+      font-size: 20px;
+    }
+    .font-formatting {
+      font-size: 20px;
+      padding: 20px;
+    }
+    .bottom-container-formatting {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 920px) {
+    b.top-bar-format {
+      margin-left: 1%;
+      font-size: 4vw;
+    }
+    a.top-bar-format {
+      font-size: 3vw;
+    }
+    .font-formatting {
+      font-size: 15px;
+      padding: 5px;
+    }
+    .bottom-container-formatting {
+      font-size: 2vw;
+    }
+  }
+  .navbar-nav {
+    position: absolute;
+    right: 5%;
+  }
+  
+  .bottom-container-formatting {
+    text-align: center;
+    padding-top: 0.5%;
+    padding-bottom: 0.2%;
+    background-color: #e2b8f0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    size: absolute;
+    height: 6vh;
+  }
+  
+  /*    navbar formatting ends....           */
