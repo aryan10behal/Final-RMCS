@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../common_components/Button.jsx";
+import {useHistory} from "react-router-dom";
 
 import "./styles-1.css";
 /*import kingImg from "../images/king.jpeg";*/
 
 
 function DisplayRight() {
+  const [username, setUsername] = useState("");
+  const [players, setPlayers] = useState();
+  const [rounds, setRounds] = useState();
+  const [roomcode,setRoomcode] = useState();
+
+  let history = useHistory()
+
+
+  const buttonStyle = {
+    padding: "2%",
+    width: "60%",
+    borderRadius: "15px",
+    margin: "5% 0 0 0",
+    backgroundColor: "#E2B8F0",
+    border: "0px",
+    whiteSpace: "normal"
+  };
+
+  const textStyle = {
+    color: "black",
+    fontSize: "2rem"
+  };
+
+
   return (
     <div className="rightDisplay col-md-6">
       <div className="card">
@@ -15,6 +40,9 @@ function DisplayRight() {
               className="btn btn-primary nameInput"
               type="text"
               placeholder="Type Your Name Here"
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
             />
             <br />
             <Button
@@ -62,7 +90,7 @@ function DisplayRight() {
               path=""
             />
             <br />
-            <Button
+            {/* <Button
               type=""
               color="#E2B8F0"
               width="60%"
@@ -75,7 +103,23 @@ function DisplayRight() {
               textColor="black"
               fontSize="2rem"
               path="/Screen2"
-            />
+            /> */}
+              <button type="button" className="btn btn-primary" style={buttonStyle} 
+                    onClick={()=> {
+                      history.push({
+                          pathname: '/Screen2',
+                          state: { 
+                              username: {username},
+                              players: {players},
+                              rounds: {rounds},
+                              roomcode: {roomcode}
+                                  }
+                      });
+                    }}>
+                      <span className="butText" style={textStyle}>
+                      Play As Guest
+                      </span>
+              </button>
             <br />
             <Button
               type=""

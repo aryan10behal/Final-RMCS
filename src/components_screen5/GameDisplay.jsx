@@ -4,21 +4,21 @@ import "./styles-5.css";
 
 function GameDisplay() {
   return (
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 cols">
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-6 cols">
           <UserDisplay type="left" />
         </div>
-        <div class="col-md-6 cols">
+        <div className="col-md-6 cols">
           <UserDisplay type="right" />
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6 cols">
+      <div className="row">
+        <div className="col-md-6 cols">
           <UserDisplay type="left" />
         </div>
-        <div class="col-md-6 cols">
+        <div className="col-md-6 cols">
           <UserDisplay type="right" />
         </div>
       </div>

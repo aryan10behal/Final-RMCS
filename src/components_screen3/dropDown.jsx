@@ -1,33 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import "./styles-3.css";
 
 function DropDownMenu(props) {
-  return (
-    <div class="dropdown ">
-      <a
-        class="btn btn-secondary text-dark font-formatting screen4-boxes-style dropdown-toggle"
-        href="#"
-        role="button"
-        id="dropdownMenuLink"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        No. of Rounds
-      </a>
 
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">
-          4
-        </a>
-        <a class="dropdown-item" href="#">
-          5
-        </a>
-        <a class="dropdown-item" href="#">
-          6
-        </a>
-      </div>
-    </div>
+  let { rounds, setRounds } = props;
+
+  function handleChange(event){
+      setRounds(event.target.value)
+  }
+  
+  return (
+    <select className="btn btn-secondary dropdown-toggle text-dark font-formatting screen4-boxes-style" name='option' onChange={handleChange}>
+    <option value="4">4</option>
+    <option value="6">6</option>
+    <option value="10">10</option>
+</select>
   );
 }
 export default DropDownMenu;

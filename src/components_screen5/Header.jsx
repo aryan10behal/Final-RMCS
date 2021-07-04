@@ -1,17 +1,16 @@
 import React from "react";
 import "./styles-5.css";
 
-var roundNumber = 3;
-var gameCode = 230301;
 
-function Header() {
+
+function Header(props) {
   return (
     <div className="headerGame container-fluid row">
       <div className="col-md-6 cols">
-        <p className="HeaderContent1">Round : {roundNumber} </p>
+        <p className="HeaderContent1">Round # : {props.roundNumber} </p>
       </div>
       <div className="col-md-6 cols">
-        <p className="HeaderContent2">Game code : {gameCode} </p>
+        <p className="HeaderContent2">Game code : {props.gameCode} </p>
       </div>
     </div>
   );

@@ -1,10 +1,25 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import Options from "./gameOptions";
 import TopBar from "../common_components/topBar";
 import BottomBar from "../common_components/bottomBar";
 import "./styles-2.css";
 
+import { useLocation } from "react-router-dom";
+
 function Screen_2() {
+
+  const location = useLocation();
+
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    setUser(location.state.username.username);  // username
+    console.log(location.state); 
+ }, []);
+
+   
+
+
   return (
     <div>
       <TopBar text="Sign In" />
@@ -12,12 +27,12 @@ function Screen_2() {
         <div className="col-6">
           <div className="top-left">
             <Options 
-            imgsrc="fas fa-gamepad" text="Create Game" path="/Screen3"/>
+            imgsrc="fas fa-gamepad" text="Create Game" path="/Screen3" user={user}/>
           </div>
         </div>
         <div className="col-6">
           <div className="top-right">
-            <Options imgsrc="fas fa-user-friends" text="Join Game" path="/Screen4"/>
+            <Options imgsrc="fas fa-user-friends" text="Join Game" path="/Screen4" user={user}/>
           </div>
         </div>
       </div>

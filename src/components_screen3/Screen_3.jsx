@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState,useEffect } from "react";
 import NumberOfPlayers from "./number_of_players_button";
 import TopBar from "../common_components/topBar";
 import BottomBar from "../common_components/bottomBar";
@@ -6,8 +6,50 @@ import JoinCode from "./joiningCode";
 import "./styles-3.css";
 import DropDownMenu from "./dropDown";
 import "react-dropdown/style.css";
+import {useHistory,useLocation } from "react-router-dom";
 
+
+
+/*random code generator*/  
+function makeid(length) {
+  var result           = '';
+  var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+    result += characters.charAt(Math.floor(Math.random() * 
+charactersLength));
+ }
+ return result;
+}
+
+
+
+/*-----------------------------------------*/
 function Screen_3() {
+    let history = useHistory();
+    const location = useLocation();
+
+
+    const [players, setPlayers] = useState();
+    const [rounds, setRounds] = useState();
+    const [roomcode,setRoomcode] = useState();
+    const [user, setUser] = useState();
+    
+    useEffect(() => {
+      setUser(location.state.username);  // username
+      setRoomcode(makeid(5));
+      console.log(location.state);
+      }, []);
+      
+      const cur_state = {
+        username: {user},
+        players: {players},
+        rounds: {rounds},
+        roomcode:{roomcode}
+      }
+
+      console.log(cur_state);
+    
   return (
     <div>
       <TopBar text="Sign In" />
@@ -25,13 +67,13 @@ function Screen_3() {
           <br />
           <br />
           <div className="col-md-4">
-            <NumberOfPlayers text="4" path=""/>
+            <NumberOfPlayers text="4" players={players} setPlayers={setPlayers}/>
           </div>
           <div className="col-md-4">
-            <NumberOfPlayers text="5" path=""/>
+            <NumberOfPlayers text="5" players={players} setPlayers={setPlayers}/>
           </div>
           <div className="col-md-4">
-            <NumberOfPlayers text="6" path=""/>
+            <NumberOfPlayers text="6" players={players} setPlayers={setPlayers}/>
           </div>
           <br />
           <br />
@@ -39,7 +81,7 @@ function Screen_3() {
             <h1>-->> Choose number of Rounds</h1>
           </div>
           <div className="col-lg-6 margins-formatting-2">
-            <DropDownMenu />
+            <DropDownMenu rounds={rounds} setRounds={setRounds} />
           </div>
           <br />
           <br />
@@ -50,14 +92,24 @@ function Screen_3() {
             <h1>Joining Code</h1>
           </div>
           <div className="col-md-6 margins-formatting">
-            <JoinCode text="202124" />
+            <JoinCode text={roomcode} />
           </div>
           <br />
           <br />
           <br />
           <br />
           <div className="col-md-12 margins-formatting">
-            <NumberOfPlayers text="Start Game" path="/Screen5"/>
+              <button
+                type="button"
+                className="btn btn-secondary btn text-dark font-formatting screen4-boxes-style"
+                onClick={()=> {
+                  history.replace({
+                      pathname: '/Screen5',
+                      state: cur_state
+                  });
+                }}
+              >Start Game
+              </button>
           </div>
         </div>
       </div>

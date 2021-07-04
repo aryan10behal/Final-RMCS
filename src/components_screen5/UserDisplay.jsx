@@ -7,16 +7,16 @@ function UserDisplay(props) {
     return (
       <div className="container-fluid userDiv">
         <img className="usrImgLeft" src="https://previews.123rf.com/images/tigatelu/tigatelu1307/tigatelu130700242/21063052-kid-cartoon-with-king-costume.jpg" alt="UserImage" />
-        <div class="card cardLeft">
-          <div class="card-body">{props.name}</div>
+        <div className="card cardLeft">
+          <div className="card-body">{props.name}</div>
         </div>
       </div>
     );
   else {
     return (
       <div className="container-fluid userDiv">
-        <div class="card cardRight">
-          <div class="card-body">{props.name}</div>
+        <div className="card cardRight">
+          <div className="card-body">{props.name}</div>
         </div>
         <img className="usrImgRight" src="https://previews.123rf.com/images/tigatelu/tigatelu1307/tigatelu130700242/21063052-kid-cartoon-with-king-costume.jpg" alt="UserImage" />
       </div>

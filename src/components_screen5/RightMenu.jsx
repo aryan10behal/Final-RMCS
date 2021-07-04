@@ -1,11 +1,35 @@
 import React from "react";
 import Button from "../common_components/Button";
+import {useHistory} from "react-router-dom";
 import "./styles-5.css";
 
-function RightMenu() {
+function RightMenu(props) {
+
+  let history = useHistory();
+
+  const textStyle = {
+    color: "black",
+    fontSize: "2.5rem"
+  };
+
+  const buttonStyle = {
+    padding: "10%",
+    borderRadius: "50%",
+    margin: "20% 0 0 0",
+    backgroundColor: "#E2B8F0",
+    border: "0px",
+    whiteSpace: "normal"
+  };
+
+  console.log(props.players);
+  console.log(props.roundNumber);
+  console.log(props.gameCode);
+  console.log(props.user);
   return (
     <div className="rightMenu">
-      <Button
+
+
+      {/* <Button
         type="circle"
         color="#E2B8F0"
         width=""
@@ -17,8 +41,23 @@ function RightMenu() {
         margin="20% 0 0 0"
         textColor="black"
         fontSize="2.5rem"
-        path=""
-      />
+        path="/client"
+      /> */}
+
+
+      <button type="button" className="btn btn-primary" style={buttonStyle} 
+      onClick={()=> {
+                  history.push({
+                      pathname: '/Client',
+                      state: {  username: props.user,
+                                roomcode: props.gameCode,
+                              }
+                  });
+                }}>
+        <span className="butText" style={textStyle}>
+          Chat
+        </span>
+      </button>
       <br />
       <Button
         type="circle"
